@@ -6,9 +6,9 @@ public class Fibo {
 
             Scanner sc = new Scanner(System.in);
             System.out.println("Entrez une valeur:");
-            int N = sc.nextInt();
+            int n = sc.nextInt();
             sc.nextLine();
-            for(int i = 1 ; i <= N ; i++)
+            for(int i = 1 ; i <= n ; i++)
                 System.out.println( "Fibo de "+ i + " = " + fib(i));
         }
         private static int fib(int n) {
