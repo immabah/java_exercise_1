@@ -37,7 +37,7 @@ public class Freq implements Command{
 
     @Override
     public boolean run(Scanner scan) {
-        System.out.println("Please type in the explicit path where the text file is stored");
+        System.out.println("Type the explicit path");
 
         try
         {
