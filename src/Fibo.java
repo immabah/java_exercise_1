@@ -6,17 +6,16 @@ public class Fibo implements Command{
         return "fibo";
     }
     @Override
-    public boolean run(Scanner scanner) {
-        System.out.println("Enter a number :");
-        System.out.println(fibo(scanner.nextInt()));
-        scanner.nextLine();
+    public boolean run(Scanner cmd) {
+        System.out.println("Entrez un nombre :");
+        System.out.println(fibo(cmd.nextInt()));
+        cmd.nextLine();
 
         return false;
     }
-
     private static int fibo(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("Should be positive");
+            throw new IllegalArgumentException("Le nombre est négatif");
         }
         if (n == 0 || n == 1) {
             return n;
