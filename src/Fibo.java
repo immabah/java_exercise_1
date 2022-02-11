@@ -1,17 +1,26 @@
-import java.io.InputStreamReader;
 import java.util.Scanner;
-public class Fibo {
 
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Entrez une valeur:");
-            int n = sc.nextInt();
-            for(int i = 1 ; i <= n ; i++)
-                System.out.println( "Fibo de "+ i + " = " + fib(i));
-        }
-        private static int fib(int n) {
-            if (n <= 1) return n;
-            else return fib(n-1) + fib(n-2);
-        }
+public class Fibo implements Command{
+    @Override
+    public String name() {
+        return "fibo";
+    }
+    @Override
+    public boolean run(Scanner scanner) {
+        System.out.println("Enter a number :");
+        System.out.println(fibo(scanner.nextInt()));
+        scanner.nextLine();
+
+        return false;
     }
 
+    private static int fibo(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Should be positive");
+        }
+        if (n == 0 || n == 1) {
+            return n;
+        }
+        return fibo(n-1) + fibo(n-2);
+    }
+}
